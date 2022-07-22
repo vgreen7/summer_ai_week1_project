@@ -19,7 +19,17 @@ class SocialNetwork:
 
     def  create_account(self):
         #implement function that creates account here
-        print("Creating ...")
+        #User = Person()
+
+        username = input("What is your name?")
+        age = input("What is your age?")
+
+        u1 = Person(username, age)
+
+        u1.printFunc()
+
+
+        
         pass
 
 
@@ -28,6 +38,9 @@ class Person:
         self.id = name
         self.year = age
         self.friendlist = []
+
+    def printFunc(self):
+        print("Userneam: " + self.id + "Age: " + self.year)
 
     def add_friend(self, person_object):
         #implement adding friend. Hint add to self.friendlist
