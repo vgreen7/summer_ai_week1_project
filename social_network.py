@@ -29,6 +29,9 @@ if __name__ == "__main__":
                 if inner_menu_choice == "1":
                     ai_social_network.edit_details()
                     break
+                if inner_menu_choice == "2":
+                    ai_social_network.add_friends()
+                    break
                 #else:
                     #inner_menu_choice = social_network_ui.manageAccountMenu()
                 break

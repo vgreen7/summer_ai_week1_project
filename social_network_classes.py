@@ -3,6 +3,8 @@ from unicodedata import name
 
 
 class SocialNetwork:
+    
+
     def __init__(self):
         self.list_of_people = [] # this instance variable is initialized to an empty list when social network is created, 
                                  # you can save objects of people on the network in this list
@@ -51,12 +53,25 @@ class SocialNetwork:
 
         if answer == "n":
             updatedName = input("What would you like your updated name to be?")
-            print("your name is now" + updatedName)
-
+            p1.setName(updatedName)
+            newName = p1.getName()
+            #currentName = p1.getName()
+            #newName = p1.setName(updatedName)
+            #newerName = p1.getName()
+            print("your name is now" + newName)
+            print(newName)
+            
         elif answer == "a":
             print("responded with n" )
         
-
+    
+    def add_friends(self):
+        newFriend = input("Please provide the name of the friend you would like to add: ")
+        username = ""
+        age = ""
+        p1 = Person(username, age)
+        p1.addFriend(newFriend)
+        print("Your friend " + newFriend + " has been added!")
 
 
 class Person:
@@ -68,10 +83,6 @@ class Person:
     def printFunc(self):
         print("Userneam: " + self.id + "Age: " + self.year)
 
-    def add_friend(self, person_object):
-        #implement adding friend. Hint add to self.friendlist
-        pass
-
     def send_message(self):
         #implement sending message to friend here
         pass
@@ -81,3 +92,9 @@ class Person:
 
     def getAge(self):
         return self.year
+
+    def setName(self, x):
+        self.id = x
+
+    def addFriend(self, friend):
+        self.friendlist.insert(0, friend)
