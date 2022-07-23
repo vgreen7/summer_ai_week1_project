@@ -1,4 +1,6 @@
 # You can implement user interface functions here.
+from social_network_classes import SocialNetwork
+
 
 def mainMenu():
     print("")
@@ -16,3 +18,7 @@ def manageAccountMenu():
     print("4. View all my messages")
     print("5. <- Go back ")
     return input("Please Choose a number: ")
+
+def editDetails():
+    print("")
+    print("edit details ui switch")

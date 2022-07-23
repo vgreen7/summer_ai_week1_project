@@ -20,13 +20,18 @@ if __name__ == "__main__":
             ai_social_network.create_account()
 
         elif choice == "2":
+            #Allows for switch in ui
             inner_menu_choice = social_network_ui.manageAccountMenu()
             #Handle inner menu here
             while True:
                 if inner_menu_choice == "5":
                     break
-                else:
-                    inner_menu_choice = social_network_ui.manageAccountMenu()
+                if inner_menu_choice == "1":
+                    ai_social_network.edit_details()
+                    break
+                #else:
+                    #inner_menu_choice = social_network_ui.manageAccountMenu()
+                break
 
         elif choice == "3":
             print("Thank you for visiting. Goodbye3")
