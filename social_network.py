@@ -26,7 +26,7 @@ if __name__ == "__main__":
             inner_menu_choice = social_network_ui.manageAccountMenu()
             #Handle inner menu here
             while True:
-                if inner_menu_choice == "6":
+                if inner_menu_choice == "8":
                     break
                 if inner_menu_choice == "1":
                     ai_social_network.edit_details(user)
@@ -38,6 +38,10 @@ if __name__ == "__main__":
                     ai_social_network.show_friends(user)
                 if inner_menu_choice == "3":
                     ai_social_network.block_friend(user)
+                if inner_menu_choice == "5":
+                    ai_social_network.send_message(user)
+                if inner_menu_choice == "6":
+                    ai_social_network.view_message(user)
                 #else:
                     #inner_menu_choice = social_network_ui.manageAccountMenu()
                 break

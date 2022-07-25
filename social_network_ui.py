@@ -16,8 +16,10 @@ def manageAccountMenu():
     print("2. Add a friend")
     print("3. Block friend")
     print("4. View all my friends")
-    print("5. View all my messages")
-    print("6. <- Go back ")
+    print("5. Send message")
+    print("6. View my sent messages")
+    print("7. View my inbox")
+    print("8. <- Go back ")
     return input("Please Choose a number: ")
 
 def editDetails():

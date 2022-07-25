@@ -70,9 +70,6 @@ class SocialNetwork:
     
     def add_friends(self, p1):
         newFriend = input("Please provide the name of the friend you would like to add: ")
-        #username = ""
-        #age = ""
-        #p1 = Person(username, age)
         p1.addFriend(newFriend)
         print("Your friend " + newFriend + " has been added!")
 
@@ -88,6 +85,17 @@ class SocialNetwork:
         friendList = p1.getFriend()
         friendList.remove(blockedFriend)
         print(blockedFriend + "has been removed.")
+
+    def send_message(self, p1):
+        friendList = p1.getFriend()
+        print(friendList)
+        sendTo = input("Which friend would you like to send your message to?")
+        message = input("What message would you like to send?")
+        p1.addMessage(message)
+
+    def view_message(self, p1):
+        sentMessages = p1.getSentMessage()
+        print(sentMessages)
         
 
 
@@ -96,7 +104,8 @@ class Person:
         self.id = name
         self.year = age
         self.friendlist = []
-
+        self.inbox = []
+        self.sentmessages = []
     def printFunc(self):
         print("Userneam: " + self.id + "Age: " + self.year)
 
@@ -118,3 +127,9 @@ class Person:
 
     def getFriend(self):
         return self.friendlist
+
+    def addMessage(self, message):
+        self.sentmessages.insert(0, message)
+    
+    def getSentMessage(self):
+        return self.sentmessages
