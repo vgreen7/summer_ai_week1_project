@@ -83,6 +83,13 @@ class SocialNetwork:
         friendList = p1.getFriend()
         print(friendList)
 
+    def block_friend(self, p1):
+        blockedFriend = input("Which friend would you like to block?")
+        friendList = p1.getFriend()
+        friendList.remove(blockedFriend)
+        print(blockedFriend + "has been removed.")
+        
+
 
 class Person:
     def __init__(self, name, age):
