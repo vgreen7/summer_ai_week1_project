@@ -57,15 +57,17 @@ class SocialNetwork:
             updatedName = input("What would you like your updated name to be?")
             p1.setName(updatedName)
             newName = p1.getName()
-            #currentName = p1.getName()
-            #newName = p1.setName(updatedName)
-            #newerName = p1.getName()
             print("your name is now" + newName)
             print(newName)
             username = newName
             
         elif answer == "a":
-            print("responded with a" )
+            updatedAge = input("What would you like your updated age to be?")
+            p1.setAge(updatedAge)
+            newAge = p1.getAge()
+            print("Your name is now" + newAge)
+            print(newAge)
+            age = newAge
         
     
     def add_friends(self, p1):
@@ -74,9 +76,6 @@ class SocialNetwork:
         print("Your friend " + newFriend + " has been added!")
 
     def show_friends(self, p1):
-        #username = ""
-        #age = ""
-        #p1 = Person(username, age)
         friendList = p1.getFriend()
         print(friendList)
 
@@ -98,7 +97,6 @@ class SocialNetwork:
         print(sentMessages)
         
 
-
 class Person:
     def __init__(self, name, age):
         self.id = name
@@ -109,15 +107,14 @@ class Person:
     def printFunc(self):
         print("Userneam: " + self.id + "Age: " + self.year)
 
-    def send_message(self):
-        #implement sending message to friend here
-        pass
-
     def getName(self):
         return self.id
 
     def getAge(self):
         return self.year
+
+    def setAge(self, x):
+        self.year = x
 
     def setName(self, x):
         self.id = x
