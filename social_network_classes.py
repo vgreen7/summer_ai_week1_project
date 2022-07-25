@@ -3,6 +3,7 @@ from unicodedata import name
 
 
 class SocialNetwork:
+
     
 
     def __init__(self):
@@ -38,12 +39,13 @@ class SocialNetwork:
         u1 = Person(username, age)
 
         u1.printFunc()
+        return u1
 
 
 
     ## For editing account information
-    def edit_details(self):
-        p1 = Person(username, age)
+    def edit_details(self, p1):
+       
         currentName = p1.getName()
         currentAge = p1.getAge()
         print("Would you like to update your name or age? (n for name, a for age)")
@@ -60,18 +62,26 @@ class SocialNetwork:
             #newerName = p1.getName()
             print("your name is now" + newName)
             print(newName)
+            username = newName
             
         elif answer == "a":
-            print("responded with n" )
+            print("responded with a" )
         
     
-    def add_friends(self):
+    def add_friends(self, p1):
         newFriend = input("Please provide the name of the friend you would like to add: ")
-        username = ""
-        age = ""
-        p1 = Person(username, age)
+        #username = ""
+        #age = ""
+        #p1 = Person(username, age)
         p1.addFriend(newFriend)
         print("Your friend " + newFriend + " has been added!")
+
+    def show_friends(self, p1):
+        #username = ""
+        #age = ""
+        #p1 = Person(username, age)
+        friendList = p1.getFriend()
+        print(friendList)
 
 
 class Person:
@@ -98,3 +108,6 @@ class Person:
 
     def addFriend(self, friend):
         self.friendlist.insert(0, friend)
+
+    def getFriend(self):
+        return self.friendlist

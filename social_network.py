@@ -17,7 +17,9 @@ if __name__ == "__main__":
     while True: 
         if choice == "1":
             print("\nYou are now in the create account menu")
-            ai_social_network.create_account()
+            
+            user = ai_social_network.create_account()
+            
 
         elif choice == "2":
             #Allows for switch in ui
@@ -27,11 +29,13 @@ if __name__ == "__main__":
                 if inner_menu_choice == "5":
                     break
                 if inner_menu_choice == "1":
-                    ai_social_network.edit_details()
+                    ai_social_network.edit_details(user)
                     break
                 if inner_menu_choice == "2":
-                    ai_social_network.add_friends()
+                    ai_social_network.add_friends(user)
                     break
+                if inner_menu_choice == "3":
+                    ai_social_network.show_friends(user)
                 #else:
                     #inner_menu_choice = social_network_ui.manageAccountMenu()
                 break
