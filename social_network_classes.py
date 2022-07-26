@@ -3,9 +3,7 @@ from unicodedata import name
 
 
 class SocialNetwork:
-
-    
-
+ 
     def __init__(self):
         self.list_of_people = [] # this instance variable is initialized to an empty list when social network is created, 
                                  # you can save objects of people on the network in this list
@@ -25,23 +23,21 @@ class SocialNetwork:
 
     def  create_account(self):
         #implement function that creates account here
-        #User = Person()
 
         global username
         name = input("What is your name?")
         username = name
-
 
         global age
         years = input("What is your age?")
         age = years
 
         u1 = Person(username, age)
-
+        #listofpeople = self.list_of_people.append(name)
+        #print(listofpeople)
         u1.printFunc()
         return u1
-
-
+        
 
     ## For editing account information
     def edit_details(self, p1):
@@ -49,7 +45,7 @@ class SocialNetwork:
         currentName = p1.getName()
         currentAge = p1.getAge()
         print("Would you like to update your name or age? (n for name, a for age)")
-        print("Your current name and name is " + currentName + "and your current age is " + currentAge)
+        print("Your current name and name is " + currentName + " and your current age is " + currentAge)
 
         answer = input("n or a")
 
@@ -57,7 +53,7 @@ class SocialNetwork:
             updatedName = input("What would you like your updated name to be?")
             p1.setName(updatedName)
             newName = p1.getName()
-            print("your name is now" + newName)
+            print("your name is now " + newName)
             print(newName)
             username = newName
             
@@ -65,7 +61,7 @@ class SocialNetwork:
             updatedAge = input("What would you like your updated age to be?")
             p1.setAge(updatedAge)
             newAge = p1.getAge()
-            print("Your name is now" + newAge)
+            print("Your name is now " + newAge)
             print(newAge)
             age = newAge
         
@@ -83,10 +79,11 @@ class SocialNetwork:
         blockedFriend = input("Which friend would you like to block?")
         friendList = p1.getFriend()
         friendList.remove(blockedFriend)
-        print(blockedFriend + "has been removed.")
+        print(blockedFriend + " has been removed.")
 
     def send_message(self, p1):
         friendList = p1.getFriend()
+        print("List of friends: ")
         print(friendList)
         sendTo = input("Which friend would you like to send your message to?")
         message = input("What message would you like to send?")
@@ -104,8 +101,9 @@ class Person:
         self.friendlist = []
         self.inbox = []
         self.sentmessages = []
+
     def printFunc(self):
-        print("Userneam: " + self.id + "Age: " + self.year)
+        print("Userneam: " + self.id + ", " + "Age: " + self.year)
 
     def getName(self):
         return self.id
